@@ -1,4 +1,0 @@
-# Pygame practice, Kenneth Whitfield, 11/29/21, 8:38AM, v0.1    
-
-import pygame, sys
-from pygame.locals import *
