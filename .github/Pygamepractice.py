@@ -1,4 +1,4 @@
-# Pygame practice, Kenneth Whitfield, 11/29/21, 9:22AM, v0.6
+# Pygame practice, Kenneth Whitfield, 11/29/21, 9:30AM, v0.7
 
 import pygame, sys
 from pygame.locals import *
@@ -31,3 +31,14 @@ windowSurface.fill(WHITE)
 
 #draw a green polygon onto the surface
 pygame.draw.polygon(windowSurface, GREEN, ((146,0), (291, 106), (236, 277), (56, 277), (0, 106)))
+
+#draw blue lines on window surface
+pygame.draw.lines(windowSurface, BLUE, (60, 60),(120, 60), 4)
+pygame.draw.lines(windowSurface, BLUE, (120, 60),(60, 120))
+pygame.draw.lines(windowSurface, BLUE, (60, 120),(120,120), 4)
+
+#draw a cricle
+pygame.drawcircle (windowSurface, RED, (300, 50), 20, 0)
+
+#draw an ellispe 
+pygame.draw.ellipse(windowSurface, BLACK, (300, 250, 40, 80), 1)
