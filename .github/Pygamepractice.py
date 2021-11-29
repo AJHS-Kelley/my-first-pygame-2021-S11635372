@@ -1,4 +1,4 @@
-# Pygame practice, Kenneth Whitfield, 11/29/21, 9:01AM, v0.3  
+# Pygame practice, Kenneth Whitfield, 11/29/21, 9:07AM, v0.4
 
 import pygame, sys
 from pygame.locals import *
@@ -16,3 +16,9 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+
+# setup fonts
+basicFont = pygame.font.SysFont(None, 48)
+
+#setup text
+text = basicFont.render('Hello world', True, WHITE, BLUE)
