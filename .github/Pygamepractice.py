@@ -1,4 +1,4 @@
-# Pygame practice, Kenneth Whitfield, 11/29/21, 9:30AM, v0.7
+# Pygame practice, Kenneth Whitfield, 11/29/21, 9:40AM, v0.8
 
 import pygame, sys
 from pygame.locals import *
@@ -42,3 +42,6 @@ pygame.drawcircle (windowSurface, RED, (300, 50), 20, 0)
 
 #draw an ellispe 
 pygame.draw.ellipse(windowSurface, BLACK, (300, 250, 40, 80), 1)
+
+#draw text background rectangle onto surface
+pygame.draw.rect(windowSurface,RED ,textRect.left - 20, textRect.top - 20, textRect.width + 40, textRect.height +40)
