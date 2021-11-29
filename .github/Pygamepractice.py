@@ -1,4 +1,4 @@
-# Pygame practice, Kenneth Whitfield, 11/29/21, 9:13AM, v0.5
+# Pygame practice, Kenneth Whitfield, 11/29/21, 9:22AM, v0.6
 
 import pygame, sys
 from pygame.locals import *
@@ -25,3 +25,9 @@ text = basicFont.render('Hello world', True, WHITE, BLUE)
 textRect = text.get_rect()
 textRect.centerx = windowSurface.get_rect().centerx
 textRect.centery = windowSurface.get_rect().centery
+
+#draw background onto window surface
+windowSurface.fill(WHITE)
+
+#draw a green polygon onto the surface
+pygame.draw.polygon(windowSurface, GREEN, ((146,0), (291, 106), (236, 277), (56, 277), (0, 106)))
