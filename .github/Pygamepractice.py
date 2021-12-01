@@ -1,4 +1,4 @@
-# Pygame practice, Kenneth Whitfield, 12/1/21, 8:40AM, v0.9
+# Pygame practice, Kenneth Whitfield, 12/1/21, 9:28AM, v1.0
 
 import pygame, sys
 from pygame.locals import *
@@ -34,9 +34,9 @@ windowSurface.fill(PURPLE)
 pygame.draw.polygon(windowSurface, GREEN, ((146,0), (291, 106), (236, 277), (56, 277), (0, 106)))
 
 #draw blue lines on window surface
-pygame.draw.lines(windowSurface, BLUE, (60, 60),(120, 60), 4)
-pygame.draw.lines(windowSurface, BLUE, (120, 60),(60, 120))
-pygame.draw.lines(windowSurface, BLUE, (60, 120),(120,120), 4)
+pygame.draw.line(windowSurface, BLUE, (60, 60),(120, 60), 4)
+pygame.draw.line(windowSurface, BLUE, (120, 60),(60, 120))
+pygame.draw.line(windowSurface, BLUE, (60, 120),(120, 120), 4)
 
 #draw a cricle
 pygame.draw.circle (windowSurface, RED, (300, 50), 20, 0)
@@ -45,7 +45,7 @@ pygame.draw.circle (windowSurface, RED, (300, 50), 20, 0)
 pygame.draw.ellipse(windowSurface, BLACK, (300, 250, 40, 80), 1)
 
 #draw text background rectangle onto surface
-pygame.draw.rect(windowSurface,GREEN ,textRect.left - 20, textRect.top - 20, textRect.width + 40, textRect.height +40)
+pygame.draw.rect(windowSurface, GREEN, (textRect.left - 20, textRect.top - 20, textRect.width + 40, textRect.height +40))
 
 #Get a pixel array of the surface
 pixArray = pygame.PixelArray(windowSurface)
@@ -55,3 +55,12 @@ del pixArray
 # Draw the text onto the surface
 windowSurface.blit(text, textRect)
 
+#draw the window onto the screen
+pygame.display.update()
+
+#run the game loop
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
