@@ -1,4 +1,4 @@
-#simple Animation with PyGame, Kenneth Whitfield, 12/9/21, 8:50 AM, V 0.3
+#simple Animation with PyGame, Kenneth Whitfield, 12/9/21, 9:00 AM, V 0.4
 
 import pygame, sys, time
 from pygame.locals import *
@@ -25,3 +25,9 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+
+#seup the box data
+b1 ={'rect':pygame.Rect(300, 80, 50, 100), 'color': RED, 'dir':UPRIGHT}
+b2 ={'rect':pygame.Rect(200, 200, 20, 20), 'color': GREEN, 'dir':UPLEFT}
+b3 ={'rect':pygame.Rect(100, 150, 60, 60), 'color': BLUE, 'dir':UPLEFT}
+boxes = [b1, b2, b3]
