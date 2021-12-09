@@ -1,4 +1,4 @@
-#simple Animation with PyGame, Kenneth Whitfield, 12/9/21, 8:45 AM, V 0.2
+#simple Animation with PyGame, Kenneth Whitfield, 12/9/21, 8:50 AM, V 0.3
 
 import pygame, sys, time
 from pygame.locals import *
@@ -19,3 +19,9 @@ UPLEFT = 'upleft'
 UPRIGHT = 'upright'
 
 MOVESPEED = 4
+
+#Make color
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
