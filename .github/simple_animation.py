@@ -1,4 +1,4 @@
-#simple Animation with PyGame, Kenneth Whitfield, 12/9/21, 9:08 AM, V 0.5
+#simple Animation with PyGame, Kenneth Whitfield, 12/9/21, 9:22 AM, V 0.6
 
 import pygame, sys, time
 from pygame.locals import *
@@ -40,3 +40,19 @@ while True:
             pygame.quit()
             sys.exit()
 
+    windowSurface.fill(WHITE)
+    
+    for b in boxes:
+        #move the box data structre
+        if b['dir'] == DOWNLEFT:
+            b['rect'].left -= MOVESPEED
+            b['rect'].top += MOVESPEED
+        if b['dir'] == DOWNRIGHT:
+            b['rect'].left += MOVESPEED
+            b['rect'].top += MOVESPEED
+        if b['dir'] == UPLEFT:
+            b['rect'].left -= MOVESPEED
+            b['rect'].top -= MOVESPEED
+        if b['dir'] == UPRIGHT:
+            b['rect'].left += MOVESPEED
+            b['rect'].top -= MOVESPEED
