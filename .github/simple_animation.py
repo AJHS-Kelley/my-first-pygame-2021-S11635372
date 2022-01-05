@@ -1,4 +1,4 @@
-#simple Animation with PyGame, Kenneth Whitfield, 1/5/22, 9:29 AM, V 0.8
+#simple Animation with PyGame, Kenneth Whitfield, 1/5/22, 9:39 AM, V 0.9
 
 import pygame, sys, time
 from pygame.locals import *
@@ -63,23 +63,24 @@ while True:
                 b['dir'] = DOWNLEFT
             if b['dir'] == UPRIGHT:
                 b['dir'] = DOWNRIGHT
-            if b ['rect'].bottom > WINDOWHEIGHT:
-                #the box has moved past the bottom
-                if b ['dir'] == DOWNLEFT:
-                    b['dir'] = UPLEFT
-                if b ['dir'] == DOWNRIGHT:
-                    b['dir'] = UPRIGHT
-            if b['rect'].left < 0:
-                #the box moved past the left
-                if b ['dir'] == DOWNLEFT:
-                    b ['dir'] = DOWNRIGHT
-                if b ['dir'] == UPLEFT:
-                    b['dir'] = UPRIGHT
-            if b['rect'].right . WINDOWWIDTH:
-                if b ['dir'] == DOWNRIGHT:
-                    b['dir'] = DOWNLEFT
-                if b['dir'] == UPRIGHT:
-                    b['dir'] = UPLEFT
+         if b ['rect'].bottom > WINDOWHEIGHT:
+            #the box has moved past the bottom
+            if b ['dir'] == DOWNLEFT:
+                b['dir'] = UPLEFT
+            if b ['dir'] == DOWNRIGHT:
+                b['dir'] = UPRIGHT
+        if b['rect'].left < 0:
+            #the box moved past the left
+            if b ['dir'] == DOWNLEFT:
+                b ['dir'] = DOWNRIGHT
+            if b ['dir'] == UPLEFT:
+                b['dir'] = UPRIGHT
+            #the box moved past the right
+        if b['rect'].right . WINDOWWIDTH:
+            if b ['dir'] == DOWNRIGHT:
+                b['dir'] = DOWNLEFT
+            if b['dir'] == UPRIGHT:
+                b['dir'] = UPLEFT
         
         # draw the box onto the game surface
         pygame.draw.rect(windowSurface, b['color'], b['rect'])
