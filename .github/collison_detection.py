@@ -1,4 +1,4 @@
-#pygame collison detection practice, Kenneth Whitfield, 1/11/22, 9:23 AM, v0.4
+#pygame collison detection practice, Kenneth Whitfield, 1/13/22, 8:19 AM, v0.5
 
 import pygame, sys, random
 from pygame.locals import *
@@ -19,7 +19,6 @@ GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 
 #setup the food and player data structeres 
-
 foodcounter = 0
 NEWFOOD = 40
 FOODSIZE = 20
@@ -28,3 +27,11 @@ foods = []
 
 for i in range(20):
     foods.append(pygame.rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE ), FOODSIZE, FOODSIZE ))
+
+# make movement variables
+moveleft = False
+moveRight = False
+moveUp = False
+moveDown = False
+
+MOVESPEED = 6
