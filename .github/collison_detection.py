@@ -1,4 +1,4 @@
-#pygame collison detection practice, Kenneth Whitfield, 1/21/22, 8:31 AM, v1.1
+#pygame collison detection practice, Kenneth Whitfield, 1/21/22, 9:39 AM, v2.0
 
 import pygame, sys, random
 from pygame.locals import *
@@ -26,10 +26,10 @@ player = pygame.Rect(300, 100, 50, 50)
 foods = []
 
 for i in range(20):
-    foods.append(pygame.rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE ), FOODSIZE, FOODSIZE ))
+    foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE ), FOODSIZE, FOODSIZE ))
 
 # make movement variables
-moveleft = False
+moveLeft = False
 moveRight = False
 moveUp = False
 moveDown = False
@@ -75,7 +75,7 @@ while True:
                 player.left = random.randint(0, WINDOWWIDTH - player.width)
         
         if event.type == MOUSEBUTTONUP:
-            foods.append(pygame.Rect(event.pos[0], event.pos[1]), FOODSIZE, FOODSIZE)
+            foods.append(pygame.Rect(event.pos[0], event.pos[1], FOODSIZE, FOODSIZE))
 
     foodCounter += 1
     if foodCounter >= NEWFOOD:
@@ -90,20 +90,24 @@ while True:
     if moveDown and player.bottom < WINDOWHEIGHT:
         player.top += MOVESPEED
     if moveUp and player.top > 0:
-        player.top - MOVESPEED
-    if moveleft and player.left > 0:
+        player.top -= MOVESPEED
+    if moveLeft and player.left > 0:
         player.left -= MOVESPEED
     if moveRight and player.right < WINDOWWIDTH:
-        player.right += MOVESPEED
+        player.right =+ MOVESPEED
 
-        #draw the player on the surface
-        pygame.draw.rect(windowSurface, BLACK, player)
+    #draw the player on the surface
+    pygame.draw.rect(windowSurface, BLACK, player)
 
     #check for player colliding with food
     for food in foods[:]:
         if player.colliderect(food):
-            foods.remove(foods)
+            foods.remove(food)
 
     #draw the food
     for i in range(len(foods)):
         pygame.draw.rect(windowSurface, GREEN, foods[i])
+
+    #draw the window on the screen
+    pygame.display.update()
+    mainClock.tick(40)
